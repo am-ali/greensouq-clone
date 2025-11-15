@@ -7,9 +7,25 @@ import {
   User,
   ChevronDown,
   MessagesSquare,
+  LogOut,
 } from "lucide-react";
+import { useEffect, useState } from 'react';
+import { supabase } from '@/lib/supabaseClient';
 
 export default function Header() {
+  const [user, setUser] = useState<any>(null);
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => setUser(data.session?.user || null));
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user || null);
+    });
+    return () => { listener.subscription.unsubscribe(); };
+  }, []);
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+  };
+
   return (
     <header className="w-full bg-[#A1D132]"> 
       {/* TOP BAR (fixed) */}
@@ -66,13 +82,23 @@ export default function Header() {
 
         {/* ACCOUNT + CART */}
         <div className="flex items-center gap-6">
-          <div className="flex items-center gap-2 cursor-pointer">
-            <User size={26} />
-            <div className="hidden md:block leading-tight text-sm">
-              <div className="font-semibold text-[15px]">My Account</div>
-              <div className="text-[13px]">Logout</div>
-            </div>
-          </div>
+          {user ? (
+            <button onClick={handleSignOut} className="flex items-center gap-2 cursor-pointer group">
+              <User size={26} />
+              <div className="hidden md:block leading-tight text-sm text-left">
+                <div className="font-semibold text-[15px] truncate max-w-[120px]">{user.email}</div>
+                <div className="text-[13px] flex items-center gap-1"><LogOut size={14}/> Sign out</div>
+              </div>
+            </button>
+          ) : (
+            <Link href="/auth" className="flex items-center gap-2 cursor-pointer">
+              <User size={26} />
+              <div className="hidden md:block leading-tight text-sm">
+                <div className="font-semibold text-[15px]">Sign in</div>
+                <div className="text-[13px]">Account</div>
+              </div>
+            </Link>
+          )}
 
           <button>
             <ShoppingCart size={28} />
