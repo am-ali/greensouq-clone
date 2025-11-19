@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   Search,
   ShoppingCart,
@@ -27,33 +28,25 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full bg-[#A1D132]"> 
+    <header className="w-full px-2 bg-[#A1D132]"> 
       {/* TOP BAR (fixed) */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-[#A1D132]">
+      <div className="fixed top-0 left-0 py-2 right-0 z-50 bg-[#A1D132]">
         <div className="max-w-screen-2xl mx-auto flex items-center justify-between px-20 py-4 gap-8">
         {/* LOGO */}
-        <div className="flex items-center gap-3">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-            <path
-              d="M6 20C6 12 12 6 20 6C28 6 34 12 34 20C34 28 28 34 20 34"
-              stroke="#000"
-              strokeWidth="3"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12 20L18 26L28 14"
-              stroke="#8BC53F"
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <span className="text-[30px] font-bold text-black">GreenSouq</span>
-        </div>
+        <Link href="/" className="flex items-center gap-3">
+          <Image 
+            src="/logo.webp" 
+            alt="GreenSouq" 
+            width={220} 
+            height={86}
+            priority
+            className="h-auto"
+          />
+        </Link>
 
         {/* SEARCH BAR */}
-        <div className="flex-1 max-w-4xl">
-          <div className="flex h-12 bg-white rounded-md overflow-hidden shadow-sm">
+        <div className="flex-1 max-w-3xl">
+          <div className="flex h-12 bg-white rounded-s overflow-hidden shadow-sm">
             {/* Category Select */}
             <button className="flex items-center gap-2 bg-[#EDEDED] px-4 text-[15px] text-gray-700 whitespace-nowrap">
               All categories <ChevronDown size={18} />
@@ -94,8 +87,7 @@ export default function Header() {
             <Link href="/auth" className="flex items-center gap-2 cursor-pointer">
               <User size={26} />
               <div className="hidden md:block leading-tight text-sm">
-                <div className="font-semibold text-[15px]">Sign in</div>
-                <div className="text-[13px]">Account</div>
+                <div className="text-[16px]">Login</div>
               </div>
             </Link>
           )}
