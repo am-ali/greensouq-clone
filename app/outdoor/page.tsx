@@ -8,111 +8,112 @@ interface Product {
   id: number;
   name: string;
   nameArabic?: string;
-  price?: number;
-  minPrice?: number;
-  maxPrice?: number;
-  originalPrice?: number;
-  originalMinPrice?: number;
-  originalMaxPrice?: number;
+  price?: string;
+  minPrice?: string;
+  maxPrice?: string;
+  originalPrice?: string;
+  originalMinPrice?: string;
+  originalMaxPrice?: string;
   image?: string;
   badge?: string;
 }
 
 const products: Product[] = [
-  {
-    id: 1,
-    name: "Areca Palm (Dypsis lutescens)",
-    minPrice: 55,
-    maxPrice: 180,
-    image: "https://images.unsplash.com/photo-1492496913980-501348b61469?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    id: 2,
-    name: "Bougainvillea Potted",
-    originalMinPrice: 90,
-    originalMaxPrice: 140,
-    minPrice: 45,
-    maxPrice: 70,
-    image: "https://images.unsplash.com/photo-1509223197845-458d87318791?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    id: 3,
-    name: "Ficus Benjamina (Weeping Fig)",
-    minPrice: 75,
-    maxPrice: 220,
-    image: "https://images.unsplash.com/photo-1492496913980-501348b61469?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    id: 4,
-    name: "Cactus Mix",
-    minPrice: 25,
-    maxPrice: 65,
-    image: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    id: 5,
-    name: "Hibiscus Plant",
-    minPrice: 35,
-    maxPrice: 55,
-    image: "https://images.unsplash.com/photo-1509223197845-458d87318791?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    id: 6,
-    name: "Jasmine (Outdoor)",
-    price: 60,
-    image: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    id: 7,
-    name: "Hibiscus Plant",
-    minPrice: 35,
-    maxPrice: 55,
-    image: "https://images.unsplash.com/photo-1509223197845-458d87318791?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    id: 8,
-    name: "Jasmine (Outdoor)",
-    price: 60,
-    image: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop",
-  },
-];
+    {
+      id: 1,
+      name: "Bougainvillea Specimen \"Single Head\"",
+      price: "20.00",
+      originalPrice: "3800.00",
+      image: "/11.avif",
+    },
+    {
+      id: 2,
+      name: "Opuntia Consolea | Road Kill Cactus",
+      price: "65.00",
+      originalPrice: "150.00",
+      image: "/12.avif",
+      badge: "Sale",
+    },
+    {
+      id: 3,
+      name: "Areca Palm 1.2-1.5m Outdoor In Fiber Glass Pot (GRP)(70x30x30)",
+      price: "550.00",
+      originalPrice: "575.00",
+      image: "/13.avif",
+    },
+    {
+      id: 4,
+      name: "Portulaca Grandiflora | Rose Moss | 9cm pot",
+      price: "9.00",
+      originalPrice: "38.00",
+      image: "/14.avif",
+    },
+    {
+      id: 5,
+      name: "Bougainvillea Spectabilis “30 to 160cm” Dark Pinkl",
+      price: "14.00",
+      originalPrice: "225.00",
+      image: "/15.avif",
+    },
+    {
+      id: 6,
+      name: "Musa Paradisiaca Or Banana Tree \"80cm-90cm\" شجرة الموز",
+      price: "50.00",
+      image: "/16.avif",
+    },
+    {
+      id: 7,
+      name: "Vinca flowers 10 - 15cm",
+      price: "8.50",
+      originalPrice: "34.00",
+      image: "/17.avif",
+    },
+    {
+      id: 8,
+      name: "Arabian Jasmine Motia \"Jasminum Sambac\"",
+      price: "20.00",
+      originalPrice: "45.00",
+      image: "/18.avif",
+      badge: "Sale",
+    },
+  ];
 
 export default function OutdoorPage() {
   return (
     <div className="bg-white text-gray-900">
       <Header />
-      <main className="max-w-screen-2xl mx-auto px-6 lg:px-20 py-10">
+      <main className="max-w-screen-2xl mx-auto px-4 md:px-6 lg:px-20 py-6 md:py-10">
         {/* Breadcrumbs */}
-        <div className="text-sm text-gray-500 mb-6">
+        <div className="text-xs md:text-sm text-gray-500 mb-4 md:mb-6">
           <Link href="/" className="hover:underline">Home</Link>
           <span className="mx-2">›</span>
-          <span className="text-gray-700">Beautiful Outdoor Plants</span>
+          <span className="text-gray-700">Outdoor Plants</span>
         </div>
 
         {/* Title and intro */}
-        <h1 className="text-4xl font-semibold mb-4">Beautiful Outdoor Plants</h1>
-        <p className="text-gray-700 max-w-3xl mb-8">
-          Explore hardy outdoor plants perfect for UAE balconies and gardens. All plants are curated for local climate and doorstep delivery.
+        <h1 className="text-2xl md:text-5xl font-Normal mb-3 md:mb-4">Outdoor Plants</h1>
+        <p className="text-sm md:text-base font-semibold text-gray-700 max-w-3xl mb-6 md:mb-8">
+          Greensouq offers a wide selection of outdoor plants with online delivery across Dubai and the UAE.
         </p>
 
         {/* Delivery info */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-3">🚚 Home Delivery Across UAE</h2>
-          <ul className="list-disc pl-5 space-y-2 text-gray-700">
+        <section className="mb-6 md:mb-8">
+          <h2 className="text-xl md:text-2xl font-semibold mb-2 md:mb-3">🚚 Home Delivery Across UAE</h2>
+          <ul className="list-disc pl-5 space-y-2 text-sm md:text-base text-gray-700">
             <li>
-              Greensouq provides <span className="font-semibold">doorstep delivery throughout Dubai and the UAE</span>, ensuring plants arrive fresh and healthy.
+              Greensouq provides <span className="font-semibold">online ordering and doorstep delivery</span> throughout Dubai and other Emirates.
             </li>
             <li>
-              Delivery times and fees may vary depending on location and order size, but the service is designed to be fast and reliable.
+              Our platform is designed for easy browsing and secure checkout, making it convenient for both home gardeners and landscaping professionals
             </li>
           </ul>
         </section>
 
         {/* Content grid: filters + products */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8">
           {/* Filters (static UI) */}
-          <aside className="md:col-span-1 border border-gray-200 p-5 h-fit">
-            <h3 className="text-lg font-semibold mb-4">Filters</h3>
+          <aside className="md:col-span-1 border border-gray-200 p-4 md:p-5 h-fit">
+            <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4">Filters</h3>
             <div className="mb-6">
               <div className="text-sm font-medium mb-2">Availability</div>
               <label className="flex items-center gap-2 text-sm mb-2">
@@ -132,7 +133,7 @@ export default function OutdoorPage() {
           </aside>
 
         {/* Products */}
-          <section className="md:col-span-3">
+          <section className="md:col-span-4">
             {/* Toolbar */}
             <div className="flex items-center justify-between text-sm mb-4">
               <div className="flex items-center gap-2">
@@ -146,7 +147,7 @@ export default function OutdoorPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
               {products.map((p, i) => (
                 <ProductCard key={p.id} product={p} idx={i} />
               ))}

@@ -8,12 +8,12 @@ interface Product {
   id: number;
   name: string;
   nameArabic?: string;
-  price?: number;
-  minPrice?: number;
-  maxPrice?: number;
-  originalPrice?: number;
-  originalMinPrice?: number;
-  originalMaxPrice?: number;
+  price?: string;
+  minPrice?: string;
+  maxPrice?: string;
+  originalPrice?: string;
+  originalMinPrice?: string;
+  originalMaxPrice?: string;
   image?: string;
   badge?: string;
 }
@@ -22,64 +22,64 @@ const products: Product[] = [
   {
     id: 1,
     name: 'Nephrolepis exaltata "Green Lady", Boston Fern or Sword Fern',
-    minPrice: 45,
-    maxPrice: 165,
-    image: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop",
+    minPrice: "45.00",
+    maxPrice: "165.00",
+    image: "/1.avif",
   },
   {
     id: 2,
     name: "Peace Lily or Spathiphyllum or \"زنبق السلام\"",
-    originalMinPrice: 60,
-    originalMaxPrice: 650,
-    minPrice: 30,
-    maxPrice: 325,
-    image: "https://images.unsplash.com/photo-1509223197845-458d87318791?q=80&w=1200&auto=format&fit=crop",
+    originalMinPrice: "60.00",
+    originalMaxPrice: "650.00",
+    minPrice: "30.00",
+    maxPrice: "325.00",
+    image: "/2.avif",
   },
   {
     id: 3,
     name: "Asplenium Nidus or Bird's Nest Fern 50-60cm spread",
-    originalMinPrice: 200,
-    originalMaxPrice: 300,
-    minPrice: 55,
-    maxPrice: 90,
-    image: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop",
+    originalMinPrice: "200.00",
+    originalMaxPrice: "300.00",
+    minPrice: "55.00",
+    maxPrice: "90.00",
+    image: "/3.avif",
   },
   {
     id: 4,
     name: "Chamaedorea Elegans, Parlour Palm or Bamboo Palm",
-    minPrice: 25,
-    maxPrice: 45,
-    image: "https://images.unsplash.com/photo-1492496913980-501348b61469?q=80&w=800&auto=format&fit=crop",
+    minPrice: "25.00",
+    maxPrice: "45.00",
+    image: "/4.avif",
   },
   {
     id: 5,
     name: "Spider Plant (Chlorophytum comosum)",
-    minPrice: 35,
-    maxPrice: 55,
-    image: "https://images.unsplash.com/photo-1492496913980-501348b61469?q=80&w=1200&auto=format&fit=crop",
+    minPrice: "35.00",
+    maxPrice: "55.00",
+    image: "/5.avif",
   },
   {
     id: 6,
     name: "Orchid Phalaenopsis",
-    originalPrice: 140,
-    price: 90,
-    image: "https://images.unsplash.com/photo-1492496913980-501348b61469?q=80&w=1200&auto=format&fit=crop",
+    originalPrice: "140.00",
+    price: "90.00",
+    image: "/6.avif",
   },
   {
     id: 7,
     name: 'Nephrolepis exaltata "Green Lady", Boston Fern or Sword Fern',
-    minPrice: 45,
-    maxPrice: 165,
-    image: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop",
+    minPrice: "45.00",
+    maxPrice: "165.00",
+    image: "/7.avif",
   },
   {
     id: 8,
     name: "Peace Lily or Spathiphyllum or \"زنبق السلام\"",
-    originalMinPrice: 60,
-    originalMaxPrice: 650,
-    minPrice: 30,
-    maxPrice: 325,
-    image: "https://images.unsplash.com/photo-1509223197845-458d87318791?q=80&w=1200&auto=format&fit=crop",
+    originalMinPrice: "60.00",
+    originalMaxPrice: "650.00",
+    minPrice: "30.00",
+    maxPrice: "325.00",
+    image: "/8.avif",
   },
 ];
 
@@ -87,25 +87,25 @@ export default function IndoorPage() {
   return (
     <div className="bg-white text-gray-900">
       <Header />
-      <main className="max-w-screen-2xl mx-auto px-6 lg:px-20 py-10">
+      <main className="max-w-screen-2xl mx-auto px-4 md:px-6 lg:px-20 py-6 md:py-10">
         {/* Breadcrumbs */}
-        <div className="text-sm text-gray-500 mb-6">
+        <div className="text-xs md:text-sm text-gray-500 mb-4 md:mb-6">
           <Link href="/" className="hover:underline">Home</Link>
           <span className="mx-2">›</span>
           <span className="text-gray-700">Beautiful Indoor Plants</span>
         </div>
 
         {/* Title and intro */}
-        <h1 className="text-4xl font-semibold mb-4">Beautiful Indoor Plants</h1>
-        <p className="text-gray-700 max-w-3xl mb-8">
+        <h1 className="text-2xl md:text-5xl font-Normal mb-3 md:mb-4">Beautiful Indoor Plants</h1>
+        <p className="text-sm md:text-base text-gray-700 max-w-3xl mb-6 md:mb-8">
           Greensouq is a popular online plant store in the UAE that specializes in <em>indoor and outdoor plants</em>,
           gardening accessories, and eco-friendly décor.
         </p>
 
         {/* Delivery info */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-3">🚚 Home Delivery Across UAE</h2>
-          <ul className="list-disc pl-5 space-y-2 text-gray-700">
+        <section className="mb-6 md:mb-8">
+          <h2 className="text-xl md:text-2xl font-semibold mb-2 md:mb-3">🚚 Home Delivery Across UAE</h2>
+          <ul className="list-disc pl-5 space-y-2 text-sm md:text-base text-gray-700">
             <li>
               Greensouq provides <span className="font-semibold">doorstep delivery throughout Dubai and the UAE</span>,
               ensuring plants arrive fresh and healthy.
@@ -117,10 +117,10 @@ export default function IndoorPage() {
         </section>
 
         {/* Content grid: filters + products */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8">
           {/* Filters (static UI) */}
-          <aside className="md:col-span-1 border border-gray-200 p-5 h-fit">
-            <h3 className="text-lg font-semibold mb-4">Filters</h3>
+          <aside className="md:col-span-1 border border-gray-200 p-4 md:p-5 h-fit">
+            <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4">Filters</h3>
             <div className="mb-6">
               <div className="text-sm font-medium mb-2">Availability</div>
               <label className="flex items-center gap-2 text-sm mb-2">
@@ -140,7 +140,7 @@ export default function IndoorPage() {
           </aside>
 
           {/* Products */}
-          <section className="md:col-span-3">
+          <section className="md:col-span-4">
             {/* Toolbar */}
             <div className="flex items-center justify-between text-sm mb-4">
               <div className="flex items-center gap-2">
@@ -154,7 +154,7 @@ export default function IndoorPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
               {products.map((p, i) => (
                 <ProductCard key={p.id} product={p} idx={i} />
               ))}
