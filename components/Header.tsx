@@ -13,10 +13,12 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabaseClient';
+import MobileMenu from './MobileMenu';
 
 export default function Header() {
   const [user, setUser] = useState<any>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => setUser(data.session?.user || null));
@@ -40,12 +42,19 @@ export default function Header() {
 
   return (
     <header className="w-full bg-[#A1D132]"> 
+      <MobileMenu 
+        isOpen={isMobileMenuOpen} 
+        onClose={() => setIsMobileMenuOpen(false)}
+        user={user}
+        onSignOut={handleSignOut}
+      />
+      
       {/* TOP BAR (fixed) */}
       <div className={`fixed top-0 left-0 right-0 z-50 bg-[#A1D132] ${isScrolled ? 'py-0' : 'py-2'}`}>
         {/* Mobile Header */}
         <div className="md:hidden max-w-screen-2xl mx-auto px-4 pt-3">
           <div className="flex items-center justify-between gap-3">
-            <button className="text-black">
+            <button className="text-black" onClick={() => setIsMobileMenuOpen(true)}>
               <Menu size={26} />
             </button>
             
